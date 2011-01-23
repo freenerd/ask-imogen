@@ -1,0 +1,37 @@
+%h1 Listing tracks
+
+%table
+  %tr
+    %th Track
+    %th Track created at
+    %th User
+    %th Permalink
+    %th Title
+    %th User permalink
+    %th Artwork url
+    %th Waveform url
+    %th User username
+    %th User avatar url
+    %th
+    %th
+    %th
+
+  - @tracks.each do |track|
+    %tr
+      %td= track.track_id
+      %td= track.track_created_at
+      %td= track.user_id
+      %td= track.permalink
+      %td= track.title
+      %td= track.user_permalink
+      %td= track.artwork_url
+      %td= track.waveform_url
+      %td= track.user_username
+      %td= track.user_avatar_url
+      %td= link_to 'Show', track
+      %td= link_to 'Edit', edit_track_path(track)
+      %td= link_to 'Destroy', track, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Track', new_track_path

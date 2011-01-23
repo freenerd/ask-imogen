@@ -1,0 +1,12 @@
+!!! 5
+
+%html
+  %head
+    %title Ask Imogen
+    = stylesheet_link_tag :all
+    = javascript_include_tag 'jquery.min.js'
+    = javascript_include_tag 'rails'
+    = csrf_meta_tag
+    = yield :head_javascript
+  %body
+    = yield

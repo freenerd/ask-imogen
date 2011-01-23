@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Question:
+  = @qa.question_id
+%p
+  %b Answer:
+  = @qa.answer_id
+%p
+  %b Questioner twitter username:
+  = @qa.questioner_twitter_username
+
+= link_to 'Edit', edit_qa_path(@qa)
+\|
+= link_to 'Back', qas_path

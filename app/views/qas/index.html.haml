@@ -1,0 +1,23 @@
+%h1 Listing qas
+
+%table
+  %tr
+    %th Question
+    %th Answer
+    %th Questioner twitter username
+    %th
+    %th
+    %th
+
+  - @qas.each do |qa|
+    %tr
+      %td= qa.question_id
+      %td= qa.answer_id
+      %td= qa.questioner_twitter_username
+      %td= link_to 'Show', qa
+      %td= link_to 'Edit', edit_qa_path(qa)
+      %td= link_to 'Destroy', qa, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Qa', new_qa_path

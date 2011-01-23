@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Track:
+  = @track.track_id
+%p
+  %b Track created at:
+  = @track.track_created_at
+%p
+  %b User:
+  = @track.user_id
+%p
+  %b Permalink:
+  = @track.permalink
+%p
+  %b Title:
+  = @track.title
+%p
+  %b User permalink:
+  = @track.user_permalink
+%p
+  %b Artwork url:
+  = @track.artwork_url
+%p
+  %b Waveform url:
+  = @track.waveform_url
+%p
+  %b User username:
+  = @track.user_username
+%p
+  %b User avatar url:
+  = @track.user_avatar_url
+
+= link_to 'Edit', edit_track_path(@track)
+\|
+= link_to 'Back', tracks_path

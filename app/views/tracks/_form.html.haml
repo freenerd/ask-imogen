@@ -1,0 +1,40 @@
+= form_for @track do |f|
+  -if @track.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@track.errors.count, "error")} prohibited this track from being saved:"
+      %ul
+        - @track.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :track_id
+    = f.text_field :track_id
+  .field
+    = f.label :track_created_at
+    = f.datetime_select :track_created_at
+  .field
+    = f.label :user_id
+    = f.text_field :user_id
+  .field
+    = f.label :permalink
+    = f.text_field :permalink
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :user_permalink
+    = f.text_field :user_permalink
+  .field
+    = f.label :artwork_url
+    = f.text_field :artwork_url
+  .field
+    = f.label :waveform_url
+    = f.text_field :waveform_url
+  .field
+    = f.label :user_username
+    = f.text_field :user_username
+  .field
+    = f.label :user_avatar_url
+    = f.text_field :user_avatar_url
+  .actions
+    = f.submit 'Save'
