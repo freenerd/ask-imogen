@@ -1,2 +1,2 @@
-module QAsHelper
+module QasHelper
 end
