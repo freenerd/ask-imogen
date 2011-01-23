@@ -2,11 +2,11 @@ class QasController < ApplicationController
   # GET /qas
   # GET /qas.xml
   def index
-    @qas = Qa.all
+    @qas = Qa.all(:include => [:answer, :question])
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @qas }
+      format.json { render :json => @qas.to_json(:include => [:answer, :question]) }
     end
   end
 
@@ -17,7 +17,7 @@ class QasController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @qa }
+      format.json  { render :xml => @qa.to_json(:include => [:answer, :question]) }
     end
   end
 
