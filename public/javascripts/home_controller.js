@@ -16,7 +16,7 @@ var checkFlashVersion = function(){
   var flashVersion = swfobject.getFlashPlayerVersion();
   if(!(flashVersion.major >= 10 && flashVersion.minor >= 1)){
     alert('Please install a current flash version. Your version: ' + flashVersion.major + '.' + flashVersion.minor);  
-  }  
+  }
 };
 
 function formatMs(ms) {

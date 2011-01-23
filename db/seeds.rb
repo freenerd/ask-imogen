@@ -7,36 +7,49 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 tracks = []
-tracks << {:track_id => 6307130, :user_id => 1232518, :permalink => "eddie-morton-somebody-else-is-gettin-it", :title => "Somebody Else is Gettin It", :user_permalink => "thisisparker", :artwork_url => "http://i1.soundcloud.com/avatars-000001472284-h6z4vz-crop.jpg", :waveform_url => "http://waveforms.soundcloud.com/yTACN8xTDy0o_m.png", :user_username => "thisisparker"}
-tracks << {:track_id => 2, :user_id => 193, :permalink => "oberholz5", :title => "Electro 1", :user_permalink => "eric", :artwork_url => "http://waveforms.soundcloud.com/KcoNolQWb1bB_m.png", :waveform_url => "http://i1.soundcloud.com/avatars-000002132069-wserv8-crop.jpg", :user_username => "Eric"}
+tracks << {
+  :track_id => 6307130,
+  :user_id => 1232518,
+  :permalink => "eddie-morton-somebody-else-is-gettin-it",
+  :title => "Somebody Else is Gettin It",
+  :user_permalink => "thisisparker",
+  :artwork_url => "http://i1.soundcloud.com/avatars-000001472284-h6z4vz-crop.jpg",
+  :waveform_url => "http://waveforms.soundcloud.com/yTACN8xTDy0o_m.png",
+  :user_username => "thisisparker"
+}
+
+tracks << {
+  :track_id => 2,
+  :user_id => 193,
+  :permalink => "oberholz5",
+  :title => "Electro 1",
+  :user_permalink => "eric",
+  :artwork_url => "http://waveforms.soundcloud.com/KcoNolQWb1bB_m.png",
+  :waveform_url => "http://i1.soundcloud.com/avatars-000002132069-wserv8-crop.jpg",
+  :user_username => "Eric"
+}
 
 questions = []
-10.times {
-  track = Track.create(tracks[rand(tracks.length).to_int].merge(
+10.times do
+  question_raw = tracks.shuffle.first
+  question = Track.create(question_raw.merge(
     :track_created_at => Time.now - rand(1000).to_int.minutes)
   )
 
-  track.title = "Q#{track.id}"
-  track.save!
+  question.title = "Q#{question.id}"
+  question.save!
 
-  questions << track
-}
+  qa = Qa.create(:question => question, :question_number => question.id, :questioner_twitter_username => "freenerd")
 
-answers = []
-3.times {
-  track = Track.create(tracks[rand(tracks.length).to_int].merge(
-    :track_created_at => Time.now - rand(1000).to_int.minutes)
-  )
+  if rand(100) > 50 #answer some questions
+    answer = Track.create(tracks.shuffle.first.merge(
+      :track_created_at => Time.now - rand(1000).to_int.minutes)
+    )
 
-  answers << track
-}
+    answer.title = "A#{qa.question_number}"
+    answer.save!
 
-answers.each{ |track|
-  question = questions.pop
-
-  track.title = "A#{question.id}"
-  track.save!
-
-  Qa.create(:question => question, :answer => track, :question_number => answer.id, :questioner_twitter_username => "freenerd")
-}
-
+    qa.answer = answer
+    qa.save!
+  end
+end

@@ -37,4 +37,51 @@ class OauthController < ApplicationController
     redirect_to "/sc-connect-complete.html?post_uri=#{CGI::escape(post_uri)}"
   end
 
+  def check_for_answers
+    consumer = OAuth::Consumer.new \
+      $consumer_token,
+      $consumer_secret,
+      :site => "http://api.#{$sc_host}"
+
+    access_token = OAuth::AccessToken.new(consumer, $admin_consumer_token, $admin_consumer_secret)
+
+    range = 10.hours
+    query = "/me/tracks.json?created_at[from]=#{OAuth::Helper.escape (Time.now - range)}&created_at[to]=#{OAuth::Helper.escape Time.now}"
+
+    response = access_token.request(:get, query)
+    tracks = JSON.parse(response.body)
+
+    text = ""
+    tracks.each do |track|
+      unless Track.find_by_track_id(track[:id])
+        match = track['title'].match /^A(\d*) .*/ # like "A123 Awesome Answer!!!"
+        if match && question_number = match[1]
+          # this seems to be an answer
+          qa = Qa.find_by_question_number(question_number)
+          if qa && !qa.answer
+            answer = Track.create({
+              :track_id => track[:id],
+              :user_id => track[:user_id],
+              :permalink => track[:permalink],
+              :title => track['title'],
+              :user_permalink => track[:user_username],
+              :artwork_url => track[:artwork_url],
+              :waveform_url => track[:waveform_url],
+              :user_username => track[:user_username]
+            })
+            qa.answer = answer
+            qa.save!
+            text += "new answer saved"
+          else
+            text += "answered a question that was not asked?"
+          end
+        else
+          text += "question no match"
+        end
+      else
+        text += "answer already in database"
+      end
+    end
+    render :text => text
+  end
 end
