@@ -2,6 +2,8 @@ AskImogen::Application.routes.draw do
   resources :qas
 
   match 'tracks/max-question-number' => 'tracks#max_question_number'
+  match 'oauth/request_token' => 'oauth#request_token'
+  match 'oauth/access_token' => 'oauth#access_token'
 
   resources :tracks
 
@@ -54,7 +56,7 @@ AskImogen::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "qas#index"
+  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,6 +1,6 @@
 var CALLBACK_REGISTRY = {
   triggerCallbacks: function(eventName, arg){
-    //console.log('trig ', eventName, arg);
+    console.log('trig ', eventName, arg);
     var cs = this.getCallbacks(eventName);
     for(var i=0; i < cs.length; i++){
       cs[i](arg);

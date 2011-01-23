@@ -49,6 +49,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     multipart (0.2.1)
+    multipart-post (1.1.0)
     oauth (0.4.4)
     oauth-active-resource (0.4.6)
       activeresource
@@ -91,6 +92,7 @@ PLATFORMS
 DEPENDENCIES
   haml-rails
   jquery-rails
+  multipart-post
   rails (= 3.0.3)
   soundcloud-ruby-api-wrapper
   sqlite3-ruby
