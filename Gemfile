@@ -8,6 +8,7 @@ gem 'rails', '3.0.3'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'soundcloud-ruby-api-wrapper'
 
 # Use unicorn as the web server
 # gem 'unicorn'
