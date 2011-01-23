@@ -80,4 +80,12 @@ class TracksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def max_question_number
+    new_max = (ReservedQuestionNumbers.maximum("question_number") || 0) + 1
+
+    if ReservedQuestionNumbers.create(:question_number => new_max)
+      render :text => new_max
+    end
+  end
 end

@@ -37,6 +37,6 @@ answers.each{ |track|
   track.title = "A#{question.id}"
   track.save!
 
-  Qa.create(:question => question, :answer => track, :questioner_twitter_username => "freenerd")
+  Qa.create(:question => question, :answer => track, :question_number => answer.id, :questioner_twitter_username => "freenerd")
 }
 

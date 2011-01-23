@@ -1,6 +1,8 @@
 AskImogen::Application.routes.draw do
   resources :qas
 
+  match 'tracks/max-question-number' => 'tracks#max_question_number'
+
   resources :tracks
 
   # The priority is based upon order of creation:
