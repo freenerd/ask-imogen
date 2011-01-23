@@ -1,0 +1,243 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit;}
+
+table {border-collapse: collapse; border-spacing: 0;}
+caption, th, td {text-align: left; font-weight: normal;}
+form legend {display: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: "";}
+blockquote, q {quotes: "" "";}
+ol, ul {list-style: none;}
+hr {display: none; visibility: hidden;}
+
+:focus {outline: 0;}
+
+body {
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(1, #9a0000), color-stop(0, #400000));
+  background: -moz-linear-gradient(right bottom, #9a0000 0%, #400000 100%);
+  
+}
+
+body, a, a:visited, a:active {
+  color: #EEE;
+  font-family: Rockwell;
+} 
+
+h1 {
+  font-size: 4em;
+  -moz-transition: opacity 1s linear;
+  text-indent: -10000px;
+  width: 314px;
+  height: 154px;
+  background: url(/images/recbutton-logo.png);
+}
+
+.base {
+  margin-left: 50px;
+}
+
+.actions {
+  width: 600px;
+  height: 100px;
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  margin-left: -300px;
+}
+
+.share-actions {
+  width: 600px;
+  height: 200px;
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  margin-left: -300px;
+  -moz-transition: opacity 1s linear;
+}
+
+#play {
+  position: absolute;
+  left: 15%;
+  top: 50px;
+  width: 56px;
+  height: 56px;
+  margin-left: -28px;
+  background: url(/images/play-button.png);
+  text-indent: -10000px;
+  -moz-transition: opacity 1s linear;
+}
+
+#play.playing {
+  background: url(/images/stop-button.png) no-repeat 1px 4px;
+}
+
+#record {
+  position: absolute;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  margin-left: -75px;
+  text-indent: -10000px;
+  background: url(/images/rec-button.png);
+}
+
+#time {
+  position: absolute;
+  left: 50%;
+  top: -30px;
+  width: 100px;
+  height: 30px;
+  margin-left: -50px;
+  text-align: center;
+  -moz-transition: opacity 1s linear;
+}
+
+#record-stop {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  width: 47px;
+  height: 47px;
+  margin-left: -23px;
+  text-indent: -10000px;
+  background: url(/images/rec-only-stop-button.png);
+  opacity: 0;
+  display: none;
+}
+
+#share {
+  position: absolute;
+  left: 85%;
+  top: 50px;
+  width: 98px;
+  height: 47px;
+  margin-left: -49px;
+  background: url(/images/share-button.png);
+  text-indent: -10000px;
+}
+
+.opacity-zero {
+  opacity: 0;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+#record-instruction {
+  position: absolute;
+  left: 80%;
+  top: 250px;
+  width: 182px;
+  height: 152px;
+  margin-left: -91px;
+  background: url(/images/record-help.png);
+  text-indent: -10000px;
+  margin-top: -390px;
+  -moz-transition: opacity 1s linear,top 1s ease-out;
+}
+
+#play-instruction {
+  position: absolute;
+  left: -5%;
+  top: 250px;
+  width: 115px;
+  height: 122px;
+  margin-left: -57px;
+  background: url(/images/play-help.png);
+  text-indent: -10000px;
+  margin-top: -90px;
+  -moz-transition: opacity 1s linear,top 1s ease-out;
+}
+
+#share-instruction {
+  position: absolute;
+  left: 105%;
+  top: 250px;
+  width: 140px;
+  height: 149px;
+  margin-left: -70px;
+  background: url(/images/share-help.png);
+  text-indent: -10000px;
+  margin-top: -90px;
+  -moz-transition: opacity 1s linear,top 1s ease-out;
+}
+
+#share-more-instruction {
+  position: absolute;
+  left: 105%;
+  top: 0px;
+  width: 341px;
+  height: 200px;
+  margin-left: -170px;
+  background: url(/images/share-more-help.png);
+  text-indent: -10000px;
+  margin-top: -0px;
+  -moz-transition: opacity 1s linear,top 1s ease-out;
+}
+
+#your-track-instruction {
+  position: absolute;
+  left: 0%;
+  top: 0px;
+  width: 255px;
+  height: 174px;
+  margin-left: -123px;
+  background: url(/images/your-track-help.png);
+  text-indent: -10000px;
+  margin-top: 60px;
+  -moz-transition: opacity 1s linear,top 1s ease-out;
+}
+
+#share-fb {
+  position: absolute;
+  left: 45%;
+  top: 0px;
+  width: 20px;
+  height: 35px;
+  margin-left: -10px;
+  background: url(/images/fb-button.png);
+  text-indent: -10000px;
+  margin-top: 50px;
+  -moz-transition: opacity 1s linear,top 1s ease-out;
+}
+
+#share-twitter {
+  position: absolute;
+  left: 55%;
+  top: 0px;
+  width: 29px;
+  height: 38px;
+  margin-left: -15px;
+  background: url(/images/twitter-button.png);
+  text-indent: -10000px;
+  margin-top: 50px;
+  -moz-transition: opacity 1s linear,top 1s ease-out;
+}
+
+.moveup {
+  top: 240px !important;
+}
+
+#permalink-url {
+  text-align: center;
+  font-size: 24px;
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  width: 600px;
+  background: none;
+  border: 0;
+  color: white;
+  margin-left: -300px;
+  display: block;
+}
+
+#recorder {
+  position: absolute;
+  left: 50%;
+  top: 190px;
+  width: 230px;
+  height: 150px;
+  margin-left: -115px;
+}
+
