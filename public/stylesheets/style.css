@@ -68,7 +68,7 @@ h3 {
     position: relative;
   }
   
-  .ask .record .record-button span.time {
+  .ask .record .record-button span.time, .ask .record .go-on, .ask .record .twitter {
     display: none;
   }
   
@@ -99,6 +99,11 @@ h3 {
     left: 0;
     top: 0;
   }
+  
+  
+  .ask .record .record-button .throbber {
+    display: none;
+    }
 
   .ask .record .record-button:hover span.inner {
     background: transparent url('../images/ask-test.png') repeat -174px 0px;
@@ -107,7 +112,6 @@ h3 {
   .ask .record.recording .record-button span.inner {
     background-position: 0 -174px;
   }
-
 
   .ask .record.recording .record-button:hover span.inner {
     background-position: -174px -174px;
@@ -128,6 +132,53 @@ h3 {
     overflow: hidden;
     text-decoration: none;
   }
+  
+  .ask .record.recorded .record-button span.inner {
+    background-position: 0 -348px;
+  }
+
+  .ask .record.recorded .record-button:hover span.inner {
+    background-position: -174px -348px;
+  }
+
+  .ask .record.playing .record-button span.inner {
+    background-position: 0 -522px;
+  }
+
+  .ask .record.playing .record-button:hover span.inner {
+    background-position: -174px -522px;
+  }
+  
+  .ask .record.recorded h2, .ask .record.playing h2, .ask .record.uploading h2, .ask .record.uploaded h2 {
+    display: none;
+  }
+  
+  .ask .record.recorded .go-on, .ask .record.playing .go-on, .ask .record.uploading .twitter, .ask .record.uploaded .twitter {
+    display: block;
+  }
+  
+  .ask .record.uploading .record-button span.inner {
+    background-position: 0 -696px;
+  }
+
+  .ask .record.uploading .record-button:hover span.inner {
+    background-position: -174px -696px;
+  }
+  
+  .ask .record.uploaded .record-button span.inner {
+    background-position: 0 -870px;
+  }
+
+  .ask .record.uploaded .record-button:hover span.inner {
+    background-position: 0px -870px;
+  }
+  
+  .ask .record.uploading .record-button .throbber {
+    display: block;
+    position: absolute;
+    left: 68px;
+    top: 67px;
+    }
   
   .ask .record-teaser {
     display: none;
