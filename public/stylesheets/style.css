@@ -1,0 +1,308 @@
+@font-face {
+  font-family: "Interstate";
+  font-weight: normal;
+  src: local("interstate-regular"), url(/fonts/Interstate-Regular.ttf) format("truetype");
+}
+
+body {
+  background: transparent url('../images/leaves.jpg') repeat 0 0;
+  font-family: interstate-light;
+  font-size: 15px;
+  line-height: 1.45em;
+  color: #fff;
+  padding: 30px 0 0 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+a {
+  outline: 0;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 0;
+}
+
+h1 span, h2 span, h3 span {
+  color: #3a6366;
+}
+
+h1 {
+  font-size: 45px;
+  line-height: 1.45em;
+  text-align: center;
+}
+
+h2 {
+  font-size: 18px;
+  line-height: 1.3em;
+  text-align: center;
+  text-transform: none;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 15px;
+  text-transform: none;
+}
+  
+.ask, h1 {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.ask {
+  margin: 30px auto 50px;
+}
+
+  .ask .record .record-button {
+    display: block;
+    width: 173px;
+    height: 173px;
+    color: #fff;
+    font-size: 28px;
+    margin: 0 auto 25px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .ask .record .record-button span.time {
+    display: none;
+  }
+  
+  .ask .record .record-button span.outer {
+    display: block;
+    background: #3a6366;
+    -moz-border-radius: 87px;
+    border-radius: 87px;
+    -webkit-border-radius: 87px;
+    opacity: 0.3;
+    -webkit-transition: opacity 0.15s linear;
+    width: 173px;
+    height: 173px;
+    position: relative;
+  }
+  
+  .ask .record .record-button span.inner {
+    display: block;
+    background: transparent url('../images/ask-test.png') repeat 0px 0px;
+    width: 173px;
+    height: 173px;
+    color: #fff;
+    font-size: 28px;
+    margin: 0 auto 10px;
+    text-align: center;
+    text-indent: -9999px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .ask .record .record-button:hover span.inner {
+    background: transparent url('../images/ask-test.png') repeat -174px 0px;
+  }
+
+  .ask .record.recording .record-button span.inner {
+    background-position: 0 -174px;
+  }
+
+
+  .ask .record.recording .record-button:hover span.inner {
+    background-position: -174px -174px;
+  }
+    
+  .ask .record .record-button:hover span.outer {
+    opacity: 0.4;
+  }
+  
+  .ask .record.recording .record-button span.time {
+    display: block;
+    text-align: center;
+    color: #fff;
+    z-index: 99999;
+    position: relative;
+    top: -96px;
+    height: 22px;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  
+  .ask .record-teaser {
+    display: none;
+    }
+    
+ul.q-a {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+  width: 1620px;
+  height: 340px;
+  overflow: hidden;
+}
+
+  ul.q-a li {
+    margin: 0 10px;
+    padding: 10px;
+    width: 500px;
+    height: 350px;
+    background: #000;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0.4;
+    -webkit-transition: opacity 0.3s linear;
+    float: left;
+    position: relative;
+  }
+  
+  ul.q-a li:hover, ul.q-a li.current {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+    ul.q-a li .player .waveform {
+      height: 35px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    ul.q-a li.current .player .waveform, ul.q-a li:hover .player .waveform {
+      opacity: 0.9;
+      background: -webkit-gradient(linear, 0 0, 0 100%, from(#3a6366), to(#000)) repeat-x, #000;
+    }
+    
+      ul.q-a li .player .waveform img {
+        width: 250px;
+        height: 70px;
+        position: absolute;
+      }
+      
+      ul.q-a li .player .waveform .playing {
+        background: -webkit-gradient(linear, 0 0, 0 100%, from(#e60000), to(#950000)) repeat-x, #950000;
+        width: 80px;
+        height: 35px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+    ul.q-a li .player .playbutton {
+      position: absolute;
+      left: 195px;
+      top: 75px;
+      text-indent: -9999px;
+    }
+    
+    ul.q-a li .player .playbutton .inner {
+      display: block;
+      background: #3a6366;
+      -moz-border-radius: 67px;
+      border-radius: 67px;
+      -webkit-border-radius: 67px;
+      opacity: 0.3;
+      -webkit-transition: opacity 0.15s linear;
+      width: 133px;
+      height: 133px;
+      position: absolute;
+    }
+    
+    ul.q-a li .player .playbutton .outer {
+      display: block;
+      width: 133px;
+      height: 133px;
+      background: transparent url('../images/play.png') no-repeat 10px 10px;
+      position: absolute;
+    }
+    
+    ul.q-a li .player .playbutton:hover .outer {
+      background: transparent url('../images/play-hover.png') repeat 0px 0px;
+    }
+    
+    ul.q-a li .player .playbutton:hover .inner {
+      opacity: 0.5;
+    }
+
+    ul.q-a li .question, ul.q-a li .answer {
+      height: 250px;
+      width: 250px;
+      float: left;
+    }
+
+    ul.q-a li h3 {
+      padding: 5px;
+      color: #666;
+      font-size: 13px;
+      line-height: 1.2em;
+    }  
+  
+      ul.q-a li h3 span.username {
+        color: #fff;
+      }  
+      
+    ul.q-a li .userimg {
+      width: 250px;
+      height: 250px;
+      background: #3a6366 url('../images/question.png') repeat 0px 0px;
+    }  
+
+    ul.q-a li .answer .userimg {
+      width: 250px;
+      height: 250px;
+      background: #2f5052 url('../images/answer.png') repeat 0px 0px;
+    }  
+
+body.ask-focus ul.q-a {
+    height: 170px;
+    margin: 20px 50%;
+  }
+
+  body.ask-focus ul.q-a li {
+    padding: 5px;
+    margin: 0 5px 0 0;
+    width: 250px;
+    height: 180px;
+  }
+    
+    body.ask-focus ul.q-a li .waveform {
+      display: none;
+    }
+
+    body.ask-focus ul.q-a li .player .playbutton {
+      width: 55px;
+      height: 55px;
+      background: transparent url('../images/play-small.png') repeat 0px 0px;
+      top: 45px;
+      left: 102px;
+    }
+
+    body.ask-focus ul.q-a li .player .playbutton .inner, body.ask-focus ul.q-a li .player .playbutton .outer {
+      display: none;
+    }
+
+    body.ask-focus ul.q-a li .player .playbutton:hover {
+      background: transparent url('../images/play-small-hover.png') repeat 0px 0px;
+    }
+    
+    body.ask-focus ul.q-a li .question, body.ask-focus ul.q-a li .answer {
+      height: 125px;
+      width: 125px;
+    }
+
+    body.ask-focus ul.q-a li .userimg {
+      width: 125px;
+      height: 125px;
+    }  
+
+    body.ask-focus ul.q-a li h3 {
+      padding: 5px 0;
+      font-size: 11px;
+      line-height: 1.2em;
+    }
+    
+body.listen-focus .ask .record {
+  display: none;
+}
+
+body.listen-focus .record-teaser {
+  display: block;
+  }

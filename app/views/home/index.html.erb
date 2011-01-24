@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+ <title>Ask Imogen</title>
+ <link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
+ <% ['jquery', 'connect', 'swfobject', 'recorder', 'home_controller'].each do |js| %>   <%= javascript_include_tag js %>
+ <% end %>
+</head>
+<body class="ask-focus">
+  <h1>
+    <span>Ask</span> 
+    Imogen 
+    <span class="number"></span>
+  </h1>
+  
+  <div class="ask">
+    <div class="record">
+      <a class="record-button" href="">
+        <span class="outer"></span>
+        <span class="inner"></span>
+        <span class="time">0.12</span>
+      </a>
+      <h2>
+        Some text explaining what is going on. Some text explaining what is going on. Some text explaining what is going on.
+      </h2>
+      <div class="go-on">
+        <a href="reset">Reset</a>
+        <a href="submit">Submit</a>
+      </div>  
+      <div class="twitter">
+        <label>Some twitter reply?</label>
+        <input type="text" value="">
+        <a href="submit">Submit</a>
+      </div>
+
+      <a href="#share" id="share">Share</a>
+
+      <%= render :partial => 'home/flash_object', :object => {:id => 'recorder', :height => 140, :width => 230, :src => '/swf/Recorder.swf', :wmode => 'transparent', :allowscriptaccess => 'always'} %>
+    </div>
+    
+    <div class="record-teaser">
+      Go and as your own question
+    </div>
+  </div>
+  
+  <div class="listen">
+    <ul class="q-a">
+      <li class="">
+        <div class="player">
+          <a class="playbutton">
+            <span class="inner"></span>
+            <span class="outer"></span>
+          </a>
+          <div class="question">
+            <div class="userimg"></div>
+            <div class="waveform">
+              <img src="images/waveform.png">
+            </div>
+            <h3>
+              <span>Q:</span>
+              <span class="username">
+                Jimmy
+              </span>
+              4 hours ago from Berlin
+            </h3>
+          </div>
+          <div class="answer">
+            <div class="userimg"></div>
+            <div class="waveform">
+              <img src="images/waveform.png">
+            </div>
+            <h3>
+              <span>A:</span>
+              <span class="username">
+                Imogen Heap
+              </span>
+              4 hours ago from London
+            </h3>
+          </div>
+        </div>
+      </li>
+      
+      <li class="current">
+        <div class="player">
+          <a class="playbutton">
+            <span class="inner"></span>
+            <span class="outer"></span>
+          </a>
+          <div class="question">
+            <div class="userimg"></div>
+            <div class="waveform">
+              <div class="playing"></div>
+              <img src="images/waveform.png">
+            </div>
+            <h3>
+              <span>Q:</span>
+              <span class="username">
+                Jimmy
+              </span>
+              4 hours ago from Berlin
+            </h3>
+          </div>
+          <div class="answer">
+            <div class="userimg"></div>
+            <div class="waveform">
+              <img src="images/waveform.png">
+            </div>
+            <h3>
+              <span>A:</span>
+              <span class="username">
+                Imogen Heap
+              </span>
+              4 hours ago from London
+            </h3>
+          </div>
+        </div>
+      </li>
+      
+      <li class="">
+        <div class="player">
+          <a class="playbutton">
+            <span class="inner"></span>
+            <span class="outer"></span>
+          </a>
+          <div class="question">
+            <div class="userimg"></div>
+            <div class="waveform">
+              <img src="images/waveform.png">
+            </div>
+            <h3>
+              <span>Q:</span>
+              <span class="username">
+                Jimmy
+              </span>
+              4 hours ago from Berlin
+            </h3>
+          </div>
+          <div class="answer">
+            <div class="userimg"></div>
+            <div class="waveform">
+              <img src="images/waveform.png">
+            </div>
+            <h3>
+              <span>A:</span>
+              <span class="username">
+                Imogen Heap
+              </span>
+              4 hours ago from London
+            </h3>
+          </div>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+  
+</body>
+</html>

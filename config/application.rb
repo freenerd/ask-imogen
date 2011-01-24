@@ -36,18 +36,18 @@ module AskImogen
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
+    # disable root object in json
+    ActiveRecord::Base.include_root_in_json = false
+
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
-    #include File.expand_path('../private_settings.rb', __FILE__)
+    require File.expand_path('../private_settings.rb', __FILE__)
     require 'soundcloud'
 
     $sc_host = "soundcloud.com"
 
-    consumer_token = "PxNVHIs7L0zlX1lyj6uPA"
-    consumer_secret = "LWkNfahUbUk4SPRNpwWnVxXzleyShkUjhjMig09qA"
-
-    $sc_consumer = ::OAuth::Consumer.new(consumer_token, consumer_secret, {
+    $sc_consumer = ::OAuth::Consumer.new($consumer_token, $consumer_secret, {
       :site               => "http://api.#{$sc_host}",
       :scheme             => :query_string,
       :request_token_path => "/oauth/request_token",

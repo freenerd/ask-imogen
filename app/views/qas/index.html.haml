@@ -5,6 +5,7 @@
     %th Question
     %th Answer
     %th Questioner twitter username
+    %th Question number
     %th
     %th
     %th
@@ -14,6 +15,7 @@
       %td= qa.question_id
       %td= qa.answer_id
       %td= qa.questioner_twitter_username
+      %td= qa.question_number
       %td= link_to 'Show', qa
       %td= link_to 'Edit', edit_qa_path(qa)
       %td= link_to 'Destroy', qa, :confirm => 'Are you sure?', :method => :delete
