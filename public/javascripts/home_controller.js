@@ -5,8 +5,9 @@ SC.Connect.options = {
   'callback': function(params) {
     RECORDER.post(params['post_uri']);
     $('#permalink-url').attr('value', 'uploading...');
-    $(".share-actions").removeClass("hidden");
-    $(".share-actions").css("z-index",1000);
+    $('.ask .record').removeClass().addClass('record uploading')
+    //$(".share-actions").removeClass("hidden");
+    //$(".share-actions").css("z-index",1000);
   }
 };
 

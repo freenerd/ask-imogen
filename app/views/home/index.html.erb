@@ -4,6 +4,8 @@
  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
  <title>Ask Imogen</title>
  <link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
+ <% ['jquery', 'connect', 'swfobject', 'recorder', 'home_controller'].each do |js| %>   <%= javascript_include_tag js %>
+ <% end %>
 </head>
 <body class="ask-focus">
   <h1>
@@ -13,7 +15,7 @@
   </h1>
   
   <div class="ask">
-    <div class="record recording">
+    <div class="record">
       <a class="record-button" href="">
         <span class="outer"></span>
         <span class="inner"></span>
@@ -31,6 +33,10 @@
         <input type="text" value="">
         <a href="submit">Submit</a>
       </div>
+
+      <a href="#share" id="share">Share</a>
+
+      <%= render :partial => 'home/flash_object', :object => {:id => 'recorder', :height => 140, :width => 230, :src => '/swf/Recorder.swf', :wmode => 'transparent', :allowscriptaccess => 'always'} %>
     </div>
     
     <div class="record-teaser">
