@@ -65,8 +65,11 @@ h3 {
     font-size: 28px;
     margin: 0 auto 25px;
     text-align: center;
-    text-indent: -9999px;
     position: relative;
+  }
+  
+  .ask .record .record-button span.time {
+    display: none;
   }
   
   .ask .record .record-button span.outer {
@@ -101,8 +104,29 @@ h3 {
     background: transparent url('../images/ask-test.png') repeat -174px 0px;
   }
 
+  .ask .record.recording .record-button span.inner {
+    background-position: 0 -174px;
+  }
+
+
+  .ask .record.recording .record-button:hover span.inner {
+    background-position: -174px -174px;
+  }
+    
   .ask .record .record-button:hover span.outer {
     opacity: 0.4;
+  }
+  
+  .ask .record.recording .record-button span.time {
+    display: block;
+    text-align: center;
+    color: #fff;
+    z-index: 99999;
+    position: relative;
+    top: -96px;
+    height: 22px;
+    overflow: hidden;
+    text-decoration: none;
   }
   
   .ask .record-teaser {
@@ -139,16 +163,27 @@ ul.q-a {
     ul.q-a li .player .waveform {
       height: 35px;
       overflow: hidden;
+      position: relative;
     }
 
     ul.q-a li.current .player .waveform, ul.q-a li:hover .player .waveform {
       opacity: 0.9;
-      background: -webkit-gradient(linear, 0 0, 0 100%, from(#3a6366), to(#000)) repeat-x, #000
+      background: -webkit-gradient(linear, 0 0, 0 100%, from(#3a6366), to(#000)) repeat-x, #000;
     }
     
       ul.q-a li .player .waveform img {
         width: 250px;
         height: 70px;
+        position: absolute;
+      }
+      
+      ul.q-a li .player .waveform .playing {
+        background: -webkit-gradient(linear, 0 0, 0 100%, from(#e60000), to(#950000)) repeat-x, #950000;
+        width: 80px;
+        height: 35px;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
 
     ul.q-a li .player .playbutton {
