@@ -5,6 +5,8 @@ AskImogen::Application.routes.draw do
   match 'oauth/request_token' => 'oauth#request_token'
   match 'oauth/access_token' => 'oauth#access_token'
 
+  match 'oauth/check-for-answers' => 'oauth#check_for_answers'
+
   resources :tracks
 
   # The priority is based upon order of creation:
